@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="16dp"
+    app:cardCornerRadius="5dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <TextView
+            android:id="@+id/textViewRepositoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextTitle"
+            tools:text="plano_leitura"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayoutRepositoryPublic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutRepositoryPublic"
+            android:layout_width="40dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/button_public_transparent"
+            app:layout_constraintTop_toTopOf="@+id/textViewRepositoryName"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewRepositoryName"
+            app:layout_constraintEnd_toEndOf="@+id/textViewRepositoryUpdate"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textViewRepositoryPublic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+
+                android:maxLines="1"
+                android:textSize="10sp"
+                android:textColor="@color/colorTextTitle"
+                android:textStyle="italic"
+                tools:text="public"/>
+
+        </LinearLayout>
+
+
+
+        <View
+            android:id="@+id/viewRepositoryCircle"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_circle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRepositoryName"
+            app:layout_constraintStart_toStartOf="@+id/textViewRepositoryName"/>
+
+        <TextView
+            android:id="@+id/textViewRepositoryLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginStart="5dp"
+            android:maxLines="1"
+            android:textSize="11sp"
+            android:textColor="@color/colorTextTitle"
+            android:textStyle="italic"
+            tools:text="Kotlin"
+            app:layout_constraintBottom_toBottomOf="@+id/viewRepositoryCircle"
+            app:layout_constraintStart_toEndOf="@+id/viewRepositoryCircle"/>
+
+
+        <TextView
+            android:id="@+id/textViewRepositoryUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginEnd="20dp"
+            android:maxLines="1"
+            android:textSize="10sp"
+            android:textColor="@color/colorTextTitle"
+            android:textStyle="italic"
+            android:ellipsize="end"
+            tools:text="Updated 3 days ago"
+            app:layout_constraintBottom_toBottomOf="@+id/viewRepositoryCircle"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageViewRepositoryForks"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="15dp"
+            app:srcCompat="@drawable/ic_code_branch_solid"
+            app:tint="@color/colorTextTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/viewRepositoryCircle"
+            app:layout_constraintStart_toEndOf="@+id/textViewRepositoryLanguage"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textViewRepositoryCountForks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginStart="5dp"
+            android:maxLines="1"
+            android:textSize="11sp"
+            android:textColor="@color/colorTextTitle"
+            android:textStyle="italic"
+            android:ellipsize="end"
+            tools:text="23"
+            app:layout_constraintBottom_toBottomOf="@+id/viewRepositoryCircle"
+            app:layout_constraintStart_toEndOf="@+id/imageViewRepositoryForks"/>
+
+        <ImageView
+            android:id="@+id/imageViewRepositoryWatchers"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="15dp"
+            app:srcCompat="@drawable/ic_watchers_24"
+            app:tint="@color/colorTextTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/viewRepositoryCircle"
+            app:layout_constraintStart_toEndOf="@+id/textViewRepositoryCountForks"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textViewRepositoryCountWatchers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginStart="5dp"
+            android:maxLines="1"
+            android:textSize="11sp"
+            android:textColor="@color/colorTextTitle"
+            android:textStyle="italic"
+            android:ellipsize="end"
+            tools:text="23"
+            app:layout_constraintBottom_toBottomOf="@+id/viewRepositoryCircle"
+            app:layout_constraintStart_toEndOf="@+id/imageViewRepositoryWatchers"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

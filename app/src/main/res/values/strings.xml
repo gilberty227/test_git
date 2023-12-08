@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GitApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_repositories">Repositórios</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="user_followers_following">%1$s followers · %2$s following</string>
+    <string name="home_search">Pesquisar</string>
+    <string name="loading">Carregando ...</string>
+    <string name="empty">Xiii, sem nenhuma informação</string>
+
+    <!-- Message error -->
+    <string name="message_error_no_internet">Você não está conectado a internet.\nPara usar este aplicatiov é necessário\nestar conectado alguma rede wi-fi.</string>
+    <string name="message_error_no_internet_button">Recarregar</string>
+
+</resources>

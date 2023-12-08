@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contentBackgroundColor"
+    tools:context=".ui.user.UserFragment">
+
+    <include
+        android:id="@+id/includeLoading"
+        layout="@layout/loading"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupShowUserInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:constraint_referenced_ids="cardViewUserInfo, cardViewUserInfoImage, recyclerViewRepositories" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewUserInfo"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="@color/teal_700"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toTopOf="@+id/cardViewUserInfoImage">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/viewGuideImage"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="14dp"
+                tools:srcCompat="@drawable/user_example"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/textViewUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp"
+                android:maxLines="1"
+                android:textSize="18sp"
+                android:textColor="@color/colorTextTitleLight"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                tools:text="Linus Torvalds"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/viewGuideImage"/>
+
+            <TextView
+                android:id="@+id/textViewUserCompany"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:maxLines="1"
+                android:textSize="14sp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/colorTextTitleLight"
+                android:textStyle="italic"
+                android:ellipsize="end"
+                tools:text="Linux Foundation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUserName"
+                app:layout_constraintStart_toStartOf="@+id/textViewUserName"/>
+
+            <TextView
+                android:id="@+id/textViewUserLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:maxLines="1"
+                android:textSize="12sp"
+                android:textColor="@color/colorTextTitleLight"
+                android:textStyle="italic"
+                android:ellipsize="end"
+                tools:text="Portland, OR"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUserCompany"
+                app:layout_constraintStart_toStartOf="@+id/textViewUserName"/>
+
+            <ImageView
+                android:id="@+id/imageViewFollowers"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@drawable/ic_followers_people_24"
+                app:layout_constraintBottom_toBottomOf="@+id/viewGuideImage"
+                app:layout_constraintStart_toStartOf="@+id/textViewUserName"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/textViewUserFollowers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="2dp"
+                android:maxLines="1"
+                android:textSize="10sp"
+                android:textColor="@color/colorTextTitleLight"
+                android:textStyle="italic"
+                android:ellipsize="end"
+                tools:text="@string/user_followers_following"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewFollowers"
+                app:layout_constraintStart_toEndOf="@+id/imageViewFollowers"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewUserInfoImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewUserInfo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            tools:srcCompat="@drawable/user_example"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRepositories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewUserInfo"
+        tools:listitem="@layout/row_repositories"/>
+
+    <include
+        android:id="@+id/includeEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        layout="@layout/empty"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewUserInfo"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
