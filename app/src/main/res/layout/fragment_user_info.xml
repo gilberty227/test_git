@@ -157,7 +157,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:visibility="gone"
-        tools:visibility="visible"
+        tools:visibility="gone"
         layout="@layout/empty"
         app:layout_constraintTop_toBottomOf="@+id/cardViewUserInfo"
         app:layout_constraintBottom_toBottomOf="parent"/>

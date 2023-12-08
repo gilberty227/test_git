@@ -13,7 +13,7 @@ class UserItemViewHolder(private val binding: RowUserBinding) : RecyclerView.Vie
         binding.textViewUserLogin.text = user.login
         binding.textViewUserType.text = user.type
 
-        itemView.setOnClickListener {
+        binding.cardViewItemUser.setOnClickListener {
             listener(user.login.orEmpty())
         }
     }

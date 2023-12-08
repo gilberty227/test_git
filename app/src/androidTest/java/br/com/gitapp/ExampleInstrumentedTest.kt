@@ -1,12 +1,15 @@
 package br.com.gitapp
 
+import androidx.fragment.app.Fragment
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.rule.ActivityTestRule
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
+import org.junit.Rule
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -20,5 +23,14 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("br.com.gitapp", appContext.packageName)
+    }
+
+    @get:Rule
+    val rule = ActivityTestRule<MainActivity>(MainActivity::class.java)
+
+
+    @Test
+    fun exampleGil(){
+
     }
 }
